@@ -11,6 +11,28 @@
 </head>
 
 <body>
+    <!-- header -->
+    <header class="text-center">
+        <h1>Strong Password Generator</h1>
+        <h4>Genera una password sicura</h4>
+    </header>
+
+    <!-- main -->
+    <main class="container">
+        <!-- alert -->
+        <div class="alert alert-primary my-4" role="alert">
+            A simple primary alert—check it out!
+        </div>
+
+        <!-- form -->
+        <form action="#">
+            <div class="mb-3 w-50">
+                <label for="psw-length" class="form-label">Lunghezza password:</label>
+                <input type="number" class="form-control" id="psw-length" min="1" step="1">
+            </div>
+            <button class="btn btn-primary">Invia</button>
+        </form>
+    </main>
 
 </body>
 
