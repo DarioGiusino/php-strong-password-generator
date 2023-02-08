@@ -1,3 +1,10 @@
+<?php
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -25,7 +32,7 @@
         </div>
 
         <!-- form -->
-        <form action="#">
+        <form action="#" method="GET">
             <div class="mb-3 w-50">
                 <label for="psw-length" class="form-label">Lunghezza password:</label>
                 <input type="number" class="form-control" id="psw-length" min="1" step="1">
