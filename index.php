@@ -1,7 +1,19 @@
 <?php
-$length = (int)isset($_GET['psw-length']) ?? null;
-
+$length = (int)isset($_GET['psw-length']);
 $permit = array();
+
+
+if (isset($_GET['letters'])) {
+    $permit = array('alfa_upper', 'alfa_lower');
+};
+
+if (isset($_GET['numbers'])) {
+    $permit = array('number');
+};
+
+if (isset($_GET['numbers']) && isset($_GET['letters'])) {
+    $permit = array('number', 'alfa_upper', 'alfa_lower');
+};
 
 function random_psw($length, $args = array())
 {
@@ -82,10 +94,27 @@ function random_psw($length, $args = array())
 
         <!-- form -->
         <form action="#" method="GET">
+            <!-- password length -->
             <div class="mb-3 w-50">
                 <label for="psw-length" class="form-label">Lunghezza password:</label>
                 <input type="number" class="form-control" id="psw-length" min="1" max="32" step="1" name="psw-length">
             </div>
+
+            <!-- letter check -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="letters" name="letters">
+                <label class="form-check-label" for="letters">
+                    Lettere
+                </label>
+            </div>
+            <!-- number check -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="numbers" name="numbers">
+                <label class="form-check-label" for="numbers">
+                    Numeri
+                </label>
+            </div>
+
             <button class="btn btn-primary">Invia</button>
         </form>
     </main>
