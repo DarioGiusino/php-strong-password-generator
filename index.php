@@ -16,6 +16,14 @@ if (isset($_GET['numbers']) && isset($_GET['letters'])) {
 };
 
 include 'includes/functions.php';
+
+if ($length) {
+    session_start();
+
+    $_SESSION['password'] = random_psw($length, $permit);
+
+    header('Location: result.php');
+}
 ?>
 
 
@@ -40,10 +48,6 @@ include 'includes/functions.php';
 
     <!-- main -->
     <main class="container">
-        <!-- alert -->
-        <div class="alert alert-primary my-4" role="alert">
-            <?= $length ? random_psw($length, $permit) : 'Inserisci la lunghezza desiderata' ?>
-        </div>
 
         <!-- form -->
         <form action="#" method="GET">
